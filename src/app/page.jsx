@@ -11,7 +11,10 @@ const Home = () => {
 	const getProducts = async () => {
 		try {
 			const response = await axios.get('/api/products');
+			console.log(response.data.data);
 			return setProducts(response.data.data);
+
+			// Catch error
 		} catch (error) {
 			console.log(error.message);
 		}
